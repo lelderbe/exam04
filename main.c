@@ -144,9 +144,7 @@ void exec(t_app *e, char ***jobs, char **envp) {
 	close(e->fd1);
 
 	//wait forks
-	while (1)
-		if (waitpid(-1, 0, 0) == -1)
-			break;
+	while (waitpid(-1, 0, 0) != -1) ;
 }
 
 int	main(int argc, char **argv, char **envp) {
